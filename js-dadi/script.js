@@ -4,7 +4,6 @@
 //Bonus: Invece di generare il numero random per l'utente, chiedilo con un prompt!
 
 //Variabili di contenimento
-const list_number = [1, 2, 3, 4, 5, 6];
 let condition_op = true;
 let result_player = 0;
 let result_computer = 0;
