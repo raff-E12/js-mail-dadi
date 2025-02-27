@@ -10,26 +10,28 @@ let result_player = 0;
 let result_computer = 0;
 let window_msg = '';
 
-//Ciclo di esecuzione
+//Ciclo di esecuzione sul relativo gioco da completare tra il computer e l'utente
 
 window_msg = window.confirm('Sei pronto per iniziare?, Le regole sono semplici per 10 tentativi, giocherai contro il CPU al gioco dei dadi. Buona fortuna!!');
 
 for (let index = 0; index < 10; index++) {
-    result_computer = Math.floor(Math.random()*6) + 1;
-    result_player = Math.floor(Math.random()*6) + 1;
-    if (result_player < result_computer) {
+    result_computer = Math.floor(Math.random() * 6) + 1;
+    result_player = Math.floor(Math.random() * 6) + 1;
+    if (result_player <= result_computer) {
         condition_op = true;
-    } else if(result_player < result_computer){
-        condition_op = false;
     } else{
-        condition_op = 'Vuoto';
+        condition_op = false;
+    }
+
+    if (condition_op === true) {
+        window_msg = window.alert('Hai vinto tu, premi ok per riprovare.');
+        console.log('Classifica:', `You:${result_player} || CPU:${result_computer}`);
+    } else{
+        window_msg = window.alert('Ha vinto il computer, premi ok per riprovare.');
+        console.log('Classifica:', `You:${result_player} || CPU:${result_computer}`);
     }
 }
 
-console.log(condition_op);
-
-if (condition_op === true) {
-    window_msg = window.alert('Hai vinto tu, premi ok per riprovare');
-} else{
-    win
-}
+//Messaggio finale del gioco all'utente
+console.log('Bene sei riuscito a completare questa sfida, grazie mille per aver giocato.');
+window.alert('Bene sei riuscito a completare questa sfida, grazie mille per aver giocato.');
